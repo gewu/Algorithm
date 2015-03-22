@@ -17,30 +17,28 @@ using namespace std;
 class Solution{
 public:
     int majorityElement(vector<int> &num){
-        vector<int>::iterator iter1 = num.begin();
-        vector<int>::iterator iter2 = num.begin() + 1; 
-        for (; iter1 != num.end() && iter2 != num.end();){
-            if (*iter1 != *iter2){
-                num.erase(iter1);
-                iter2 = num.erase(iter2);
-                iter1 = iter2;
-                ++iter2;
-            } else {
-                iter1 ++;
-                iter2 ++;
+        int maj_index = 0;
+        int count = 1;
+        for (int i = 1; i < num.size(); i++){
+            if (num[maj_index] == num[i])
+                ++count;
+            else 
+                --count;
+            if (count < 0){
+                maj_index = i;
+                count = 1;
             }
         }
-        return 0;
+        return num[maj_index];
     }
 };
 
 int main(){
     vector<int> num;
     num.push_back(10);
+    num.push_back(10);
     num.push_back(9);
-    num.push_back(9);
-    num.push_back(9);
-    num.push_back(8);
+    num.push_back(11);
     Solution solution;
     int val = solution.majorityElement(num);
     cout << val << endl;
