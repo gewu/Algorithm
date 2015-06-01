@@ -51,7 +51,12 @@ int main(){
     cout << val;
 }
 
-
+int main(){
+    int A = {4,5,6,7,0,1,2};
+    vector<int> nums(&A[0], &A[7]);
+    Solution s ;
+    s.findMin(nums);
+}
 
 
 
