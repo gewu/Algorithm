@@ -35,15 +35,13 @@ public:
         map<int, vector<int> >::iterator it = ret.begin();
         for (; it != ret.end(); it++){
             if ((it->second).size() > 1){
-                int min = it->second[0];
-                int max = it->second[0];
-                for (int j = 0; j < it->second.size(); j++){
-                    if (min > it->second[j])
-                        min = it->second[j];
-                    if (max < it->second[j])
-                        max = it->second[j];
+                int min = it->second[1]-it->second[0];
+                for (int j = 0; j+1 < it->second.size(); j++){
+                    int num_tmp = it->second[j+1] - it->second[j];
+                    if (min > num_tmp)
+                        min = num_tmp;
                 }
-                if (max - min >= k)
+                if (min <= k)
                     return true;
             }
         }
@@ -53,10 +51,10 @@ public:
 
 
 int main(){
-    int A[] = {-1, -1};
-    vector<int> nums(&A[0], &A[2]);
+    int A[] = {1,0,1,1};
+    vector<int> nums(&A[0], &A[4]);
     Solution s;
-    cout << s.containsNearbyDuplicate(nums, 1);
+    cout << s.containsNearbyDuplicate(nums, 1)<< endl;
 }
 
 
