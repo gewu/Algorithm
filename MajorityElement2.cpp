@@ -34,11 +34,9 @@ public:
 };
 
 int main(){
-    vector<int> num;
-    num.push_back(10);
-    num.push_back(10);
-    num.push_back(9);
-    num.push_back(11);
+    int A[] = {1,2,1,2,1,2,3,3};
+    vector<int> num(&A[0], &A[7]);
+
     Solution solution;
     int val = solution.majorityElement(num);
     cout << val << endl;
