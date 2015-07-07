@@ -37,6 +37,7 @@ public:
             }else {
                 p = s.back();
                 s.pop_back();
+                result.push_back(p->val);
                 p = p->right;
             }
         }

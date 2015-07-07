@@ -36,7 +36,7 @@ public:
         while(!s.empty()){
             root = s.top().first;
             visited = s.top().second;
-            s.pop;
+            s.pop();
             if (root == NULL)
                 continue;
             if (visited){
