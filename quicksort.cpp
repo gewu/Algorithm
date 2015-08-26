@@ -50,6 +50,7 @@ void quicksort(int A[], int lo, int hi){
 }
 int sort(int A[], int len){
     quicksort(A, 0, len-1);
+    return 1;
 }
 
 int main(){
