@@ -17,6 +17,8 @@
 #include <iostream>
 #include <sstream>
 #include <stack>
+#include <string>
+#include <vector>
 using namespace std;
 
 class Solution{
@@ -120,19 +122,27 @@ public:
             case '*':
                 return a*b;
             case '/':
-                /*if (b == 0)
+                if (b == 0)
                     return 0;
-                */
                 return a/b;
         }
+        return 0;
     }
 
 };
 
 int main(){
-    string test = "3+5/ 2";
+    //string test = "3+5/ 2";
+    vector<string> test;
+    string tmp;
+    for (int i = 0; i < 4; i++){
+        cin >> tmp;
+        test.push_back(tmp);
+    }
     Solution s;
-    cout << s.calculate(test) << endl;
+    for (int i = 0; i < test.size(); i++){
+        cout << s.calculate(test[i]) << endl;
+    }
 
 }
 

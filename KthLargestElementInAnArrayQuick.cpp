@@ -20,7 +20,7 @@ using namespace std;
 
 class Solution{
 public:
-    int findKthLargest2(vector<int>& nums, int k){
+    int findKthLargest(vector<int>& nums, int k){
         return findK(nums, k, 0, nums.size()-1);
     }
 
